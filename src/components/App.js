@@ -2,6 +2,7 @@ import Header from "../components/ui/Header";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./ui/Theme";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from "./ui/Footer";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         <Header />
 
         <Routes>
-          <Route path="/" element={<>Home</>} />
+          <Route path="/" element={<div style={{ height: "2000px" }}>Home</div>} />
           <Route path="/services" element={<>services</>} />
           <Route path="/customsoftware" element={<>customsoftware</>} />
           <Route path="/mobileapps" element={<>mobileapps</>} />
@@ -20,6 +21,7 @@ function App() {
           <Route path="/contact" element={<>contact</>} />
           <Route path="/estimate" element={<>estimate</>} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </ThemeProvider>
   );
