@@ -3,6 +3,7 @@ import Header from "../components/ui/Header";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./ui/Theme";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import LandingPage from "./LandingPage";
 import Footer from "./ui/Footer";
 
 function App() {
@@ -15,7 +16,9 @@ function App() {
         <Header value={value} setValue={setValue} setSelectedIndex={setSelectedIndex} selectedIndex={selectedIndex} />
 
         <Routes>
-          <Route path="/" element={<div style={{ height: "2000px" }}>Home</div>} />
+          {/* <Route path="/" element={<div style={{ height: "2000px" }}>Home</div>} /> */}
+          <Route exact path="/" element={<LandingPage />} />
+          ``
           <Route path="/services" element={<>services</>} />
           <Route path="/customsoftware" element={<>customsoftware</>} />
           <Route path="/mobileapps" element={<>mobileapps</>} />

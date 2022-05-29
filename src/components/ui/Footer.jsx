@@ -61,7 +61,6 @@ const Footer = (props) => {
           </Grid>
 
           {/* services */}
-
           <Grid item className={classes.gridItem}>
             <Grid container direction="column" spacing={2}>
               <Grid
@@ -115,7 +114,6 @@ const Footer = (props) => {
               </Grid>
             </Grid>
           </Grid>
-
           {/*  Revolortion*/}
           <Grid item className={classes.gridItem}>
             <Grid container direction="column" spacing={2}>
@@ -158,12 +156,12 @@ const Footer = (props) => {
         </Grid>
       </Hidden>
       <img alt="black decorative slash" src={footerAdornment} className={classes.adornment} />
-      <Grid style={{}} container justifyContent="flex-end" className={classes.socialContainer}>
+      <Grid container justifyContent="flex-end" className={classes.socialContainer}>
         <Grid item component={"a"} href="http//:www.facebook.com" rel="noopener noreferrer" target="_blank">
           <img alt="facebook logo" src={facebook} className={classes.icon} />
         </Grid>
         <Grid item component={"a"} href="http//:www.twitter.com" rel="noopener noreferrer" target="_blank">
-          <img alt="twitter logo" src={twitter} className={classes.icon} />
+          <img alt="twitter logo" src={twitter} style={{ margin: "0 1em" }} className={classes.icon} />
         </Grid>
         <Grid item component={"a"} href="http//:www.instagram.com" rel="noopener noreferrer" target="_blank">
           <img alt="instagram logo" src={instagram} className={classes.icon} />
