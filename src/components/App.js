@@ -5,7 +5,7 @@ import theme from "./ui/Theme";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import Footer from "./ui/Footer";
-
+import Services from "./ui/Services";
 function App() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [value, setValue] = useState(0);
@@ -16,10 +16,9 @@ function App() {
         <Header value={value} setValue={setValue} setSelectedIndex={setSelectedIndex} selectedIndex={selectedIndex} />
 
         <Routes>
-          {/* <Route path="/" element={<div style={{ height: "2000px" }}>Home</div>} /> */}
           <Route exact path="/" element={<LandingPage />} />
-          ``
-          <Route path="/services" element={<>services</>} />
+
+          <Route path="/services" element={<Services />} />
           <Route path="/customsoftware" element={<>customsoftware</>} />
           <Route path="/mobileapps" element={<>mobileapps</>} />
           <Route path="/websites" element={<>websites</>} />
