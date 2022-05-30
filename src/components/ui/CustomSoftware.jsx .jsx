@@ -1,5 +1,4 @@
-import React from "react";
-
+import documentsAnimations from "../../animations/documentsAnimation/data";
 import Lottie from "react-lottie";
 import { Link } from "react-router-dom";
 import { makeStyles, useTheme } from "@mui/styles";
@@ -27,10 +26,21 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "2em",
     paddingBottom: "10em",
   },
+  itemContainer: {
+    maxWidth: "40em !important",
+  },
 }));
 
 function CustomSoftware(props) {
   const classes = useStyles();
+  const documentsOptions = {
+    loop: true,
+    autoplay: false,
+    animationData: documentsAnimations,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   return (
     <Grid container direction="column" className={classes.mainContainer}>
@@ -113,15 +123,19 @@ function CustomSoftware(props) {
         </Grid>
       </Grid>
       <Grid item container direction="row">
-        <Grid item container>
+        <Grid item container className={classes.itemContainer}>
           <Grid item container direction="column">
             <Grid item>
               <Typography variant="h4">Digital Document</Typography>
             </Grid>
             <Grid item>
-              <Typography variant="body1">Lorem ipsum dolor sit amet.</Typography>
-              <Typography variant="body1">Lorem ipsum dolor sit amet, consectetur adipisicing.</Typography>
-              <Typography variant="body1">
+              <Typography variant="body1" paragraph>
+                Lorem ipsum dolor sit amet.
+              </Typography>
+              <Typography variant="body1" paragraph>
+                Lorem ipsum dolor sit amet, consectetur adipisicing.
+              </Typography>
+              <Typography variant="body1" paragraph>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, molestiae.
               </Typography>
             </Grid>
