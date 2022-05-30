@@ -10,6 +10,9 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 import backArrow from "../../assets/backArrow.svg";
 import forwardArrow from "../../assets/forwardArrow.svg";
+import lightbulb from "../../assets/bulb.svg";
+import cash from "../../assets/cash.svg";
+import stopwatch from "../../assets/stopwatch.svg";
 
 const useStyles = makeStyles((theme) => ({
   heading: {
@@ -26,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function CustomSoftware() {
+function CustomSoftware(props) {
   const classes = useStyles();
 
   return (
@@ -36,7 +39,12 @@ function CustomSoftware() {
           {/* <IconButton style={{ backgroundColor: "transparent" }}>
             <img src={backArrow} alt="back to service page" />
           </IconButton> */}
-          <IconButton style={{ backgroundColor: "transparent" }} component={Link} to="/services">
+          <IconButton
+            style={{ backgroundColor: "transparent" }}
+            component={Link}
+            to="/services"
+            onClick={() => props.selectedIndex(0)}
+          >
             <img src={backArrow} alt="Back to Services Page" />
           </IconButton>
         </Grid>
@@ -68,9 +76,56 @@ function CustomSoftware() {
           </Grid>
         </Grid>
         <Grid item className={classes.arrowContainer}>
-          <IconButton style={{ backgroundColor: "transparent" }} component={Link} to="/mobileapps">
+          <IconButton
+            style={{ backgroundColor: "transparent" }}
+            component={Link}
+            to="/mobileapps"
+            onClick={() => props.selectedIndex(2)}
+          >
             <img src={forwardArrow} alt="Forward to Ios/Android" />
           </IconButton>
+        </Grid>
+      </Grid>
+      <Grid item container direction="row" justifyContent="center" style={{ marginTop: "15em", marginBottom: "20em" }}>
+        <Grid item container direction="column" md alignItems="center" style={{ maxWidth: "40em" }}>
+          <Grid item>
+            <Typography variant="h4">Save Entergy</Typography>
+          </Grid>
+          <Grid item>
+            <img src={lightbulb} alt="lightbulb" />
+          </Grid>
+        </Grid>
+        <Grid item container direction="column" md alignItems="center" style={{ maxWidth: "40em" }}>
+          <Grid item>
+            <Typography variant="h4">Save Time</Typography>
+          </Grid>
+          <Grid item>
+            <img src={stopwatch} alt="stopwatch" />
+          </Grid>
+        </Grid>
+        <Grid item container direction="column" md alignItems="center" style={{ maxWidth: "40em" }}>
+          <Grid item>
+            <Typography variant="h4">Save Mony</Typography>
+          </Grid>
+          <Grid item>
+            <img src={cash} alt="cash" />
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid item container direction="row">
+        <Grid item container>
+          <Grid item container direction="column">
+            <Grid item>
+              <Typography variant="h4">Digital Document</Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body1">Lorem ipsum dolor sit amet.</Typography>
+              <Typography variant="body1">Lorem ipsum dolor sit amet, consectetur adipisicing.</Typography>
+              <Typography variant="body1">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, molestiae.
+              </Typography>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>
