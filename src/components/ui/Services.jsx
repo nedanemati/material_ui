@@ -36,7 +36,7 @@ const useStyle = makeStyles((theme) => ({
     },
   },
   servicesContainer: {
-    marginTop: "5em ",
+    marginTop: "10em ",
     [theme.breakpoints.down("sm")]: {
       padding: 25,
     },
@@ -58,6 +58,11 @@ function Services(props) {
   const machesSm = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Grid container direction="column">
+      <Grid item style={{ marginLeft: machesSm ? 0 : "5em", marginTop: machesSm ? "1em" : "2em" }}>
+        <Typography align={machesSm ? "center" : "undefined"} variant="h2" gutterBottom>
+          Services
+        </Typography>
+      </Grid>
       <Grid item>
         {/* -- ios/android block -- */}
         <Grid
@@ -65,6 +70,7 @@ function Services(props) {
           direction="row"
           className={classes.servicesContainer}
           justifyContent={machesSm ? "center" : "flex-end"}
+          style={{ marginTop: "5em" }}
         >
           <Grid
             item
@@ -129,11 +135,12 @@ function Services(props) {
           direction="row"
           className={classes.servicesContainer}
           justifyContent={machesSm ? "center" : "flex-end"}
+          style={{ marginTop: machesSm ? "1em" : "5em" }}
         >
           <Grid
             item
             style={{
-              marginLeft: machesSm ? 0 : "5em",
+              width: machesSm ? "center" : "35em",
               textAlign: machesSm ? "center" : undefined,
             }}
           >
@@ -152,7 +159,7 @@ function Services(props) {
             </Button>
           </Grid>
           <Grid item style={{ marginRight: machesSm ? 0 : "5em" }}>
-            <img className={classes.icon} src={mobileAppIcon} alt="custo software" />
+            <img className={classes.icon} src={mobileAppIcon} alt="custo software" width="250em" />
           </Grid>
         </Grid>
       </Grid>
@@ -164,12 +171,15 @@ function Services(props) {
           direction="row"
           className={classes.servicesContainer}
           justify={machesSm ? "center" : "flex-end"}
+          style={{
+            marginBottom: "10em",
+          }}
         >
           <Grid
             item
             style={{
-              // marginLeft: machesSm ? 0 : "5em",
               textAlign: machesSm ? "center" : undefined,
+              width: machesSm ? "center" : "35em",
             }}
           >
             <Typography variant="h4">Website Development</Typography>
@@ -183,7 +193,7 @@ function Services(props) {
             </Button>
           </Grid>
           <Grid item>
-            <img className={classes.icon} src={webSiteIcon} alt="website" />
+            <img className={classes.icon} src={webSiteIcon} alt="website" width="250em" />
           </Grid>
         </Grid>
       </Grid>

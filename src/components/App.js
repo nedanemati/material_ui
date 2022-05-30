@@ -6,6 +6,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import Footer from "./ui/Footer";
 import Services from "./ui/Services";
+import CustomSoftware from "./ui/CustomSoftware.jsx ";
+
 function App() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [value, setValue] = useState(0);
@@ -19,7 +21,7 @@ function App() {
           <Route exact path="/" element={<LandingPage />} />
 
           <Route path="/services" element={<Services />} />
-          <Route path="/customsoftware" element={<>customsoftware</>} />
+          <Route path="/customsoftware" element={<CustomSoftware />} />
           <Route path="/mobileapps" element={<>mobileapps</>} />
           <Route path="/websites" element={<>websites</>} />
           <Route path="/revolotion" element={<>revolotion</>} />
